@@ -3,9 +3,8 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-app.get('/:url', function (req, res){
-    var answer = req.connection;
-    res.send(answer);
+app.use(function (req, res, next){
+  console.log(req.connection);
 });
 
 var port = process.env.PORT || 8080; // set our port
