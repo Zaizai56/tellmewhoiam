@@ -3,7 +3,7 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-app.get('/', function (req, res){
+app.get('/:url', function (req, res){
     var answer = req.connection;
     res.send(answer);
 });
