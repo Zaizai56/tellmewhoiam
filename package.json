@@ -1,0 +1,24 @@
+{
+  "name": "tellmewhoiam",
+  "version": "0.0.0",
+  "description": "FCC - api returning information on the user",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tellmewhoiam"
+  },
+  "keywords": [
+    "node.js",
+    "node",
+    "FCC",
+    "whoamI"
+  ],
+  "author": "ZaiZai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
