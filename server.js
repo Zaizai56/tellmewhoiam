@@ -4,7 +4,8 @@ var app = express();
 app.use(express.static(__dirname + "/public"));
 
 app.use(function (req, res, next){
-  console.log(req.connection);
+  var answer = JSON.stringify(req.connection);
+  console.log(answer);
 });
 
 var port = process.env.PORT || 8080; // set our port
