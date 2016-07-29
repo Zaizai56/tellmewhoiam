@@ -4,7 +4,7 @@ var app = express();
 app.use(express.static(__dirname + "/public"));
 
 app.use(function (req, res, next){
-  var answer = JSON.stringify(req.connection);
+  var answer = req.connection;
   console.log(answer);
 });
 
