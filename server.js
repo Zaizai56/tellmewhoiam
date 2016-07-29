@@ -1,11 +1,15 @@
 var express = require("express");
 var app = express();
 
-app.use(express.static(__dirname + "/public"));
-
 app.use(function (req, res, next){
-  var answer = req.connection;
-  console.log(answer);
+  var IP = req.headers['x-forwarded-for'];
+  var language = req.headers['accept-language'].substring(0,2);
+  var regExp = /\(([^)]+)\)/;
+  var software = regExp.exec(req.headers['user-agent']);
+  regExp = /^.*?(?=\s\()/;
+  var browser = regExp.exec(req.headers['user-agent']);
+  var answer = JSON.stringify({ip: IP, language: language, software: software[1], browser: browser[0]});
+  res.send(answer);
 });
 
 var port = process.env.PORT || 8080; // set our port
